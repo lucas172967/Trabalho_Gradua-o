@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-2-thread-1","id":1},{"content":"pool-2-thread-2","id":2},{"content":"pool-2-thread-3","id":3},{"content":"pool-2-thread-4","id":4},{"content":"pool-2-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/edge_criterio[1:6]","start":1702836559526,"end":1702836562561,"title":"examples\/users\/edge_criterio[1:6] 15:09:19.526-15:09:22.561 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdFalha"},{"id":2,"group":2,"content":"examples\/users\/edge_criterio[2:66]","start":1702836559526,"end":1702836562113,"title":"examples\/users\/edge_criterio[2:66] 15:09:19.526-15:09:22.113 initialize AddNewPetValido UpdateAnExistingPetFalha"},{"id":3,"group":3,"content":"examples\/users\/edge_criterio[3:106]","start":1702836559526,"end":1702836563434,"title":"examples\/users\/edge_criterio[3:106] 15:09:19.526-15:09:23.434 initialize InserePetInvalido AddNewPetValido UpdateAnExistingPetSucess FindPetByIdSucesso DeletesAPet"},{"id":4,"group":4,"content":"examples\/users\/edge_pair_criterio[1:6]","start":1702836559526,"end":1702836563438,"title":"examples\/users\/edge_pair_criterio[1:6] 15:09:19.526-15:09:23.438 initialize InserePetInvalido InserePetInvalido AddNewPetValido UpdateAnExistingPetSucess FindPetByIdFalha"},{"id":5,"group":5,"content":"examples\/users\/edge_pair_criterio[2:84]","start":1702836559526,"end":1702836563004,"title":"examples\/users\/edge_pair_criterio[2:84] 15:09:19.526-15:09:23.004 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdSucesso DeletesAPet"},{"id":6,"group":2,"content":"examples\/users\/edge_pair_criterio[3:149]","start":1702836562128,"end":1702836563447,"title":"examples\/users\/edge_pair_criterio[3:149] 15:09:22.128-15:09:23.447 initialize InserePetInvalido AddNewPetValido UpdateAnExistingPetFalha"},{"id":7,"group":1,"content":"examples\/users\/node_criterio[1:6]","start":1702836562572,"end":1702836563874,"title":"examples\/users\/node_criterio[1:6] 15:09:22.572-15:09:23.874 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdFalha"},{"id":8,"group":5,"content":"examples\/users\/node_criterio[2:67]","start":1702836563017,"end":1702836564779,"title":"examples\/users\/node_criterio[2:67] 15:09:23.017-15:09:24.779 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdSucesso DeletesAPet"},{"id":9,"group":3,"content":"examples\/users\/node_criterio[3:133]","start":1702836563444,"end":1702836564322,"title":"examples\/users\/node_criterio[3:133] 15:09:23.444-15:09:24.322 initialize AddNewPetValido UpdateAnExistingPetFalha"},{"id":10,"group":4,"content":"examples\/users\/prime_path_criterio[1:6]","start":1702836563448,"end":1702836564779,"title":"examples\/users\/prime_path_criterio[1:6] 15:09:23.448-15:09:24.779 initialize InserePetInvalido AddNewPetValido UpdateAnExistingPetFalha"},{"id":11,"group":2,"content":"examples\/users\/prime_path_criterio[2:53]","start":1702836563456,"end":1702836564324,"title":"examples\/users\/prime_path_criterio[2:53] 15:09:23.456-15:09:24.324 initialize AddNewPetValido UpdateAnExistingPetFalha"},{"id":12,"group":1,"content":"examples\/users\/prime_path_criterio[3:91]","start":1702836563883,"end":1702836565206,"title":"examples\/users\/prime_path_criterio[3:91] 15:09:23.883-15:09:25.206 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdFalha"},{"id":13,"group":3,"content":"examples\/users\/prime_path_criterio[4:151]","start":1702836564329,"end":1702836566055,"title":"examples\/users\/prime_path_criterio[4:151] 15:09:24.329-15:09:26.055 initialize AddNewPetValido UpdateAnExistingPetSucess FindPetByIdSucesso DeletesAPet"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
